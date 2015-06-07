@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Bduíno - um dispositivo para captura de dados</title>
+
+		<meta name="description" content="Bduíno - Um dispositivo para a captura de dados do contexto urbano para o uso da bicicleta.">
+		<meta name="author" content="Antonio Ladeia">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Bduíno</h1>
+					<h3>Um dispositivo para a captura de dados do contexto urbano para o uso da bicicleta.</h3>
+					<p>
+						<small>Graduando: Antonio Fernando Santos Ladeia</small><br />
+						<small>Orientador: Pablo Vieira Florentino</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Agenda</h2>
+					<ul>
+					  <li>Motivação</li>
+					  <li>Problema</li>
+					  <li>Objetivo</li>
+					  <li>Solução proposta</li>
+					  <li>Conceitos básicos</li>
+					  <li>Trabalhos relacionados</li>
+					  <li>Especificação e validação</li>
+					  <li>Conclusão e trabalhos futuros</li>
+					</ul>
+				</section>
+				<section>
+				  <section>
+					  <h2>Motivação</h2>
+					  <ul>
+						<li>Falta de condições adequadas ao uso da bicicleta</li>
+						<li>Desrespeito à algumas leis de trânsito brasileira como a que estabelece 1,5m como distância mínima de ultrapassagem de uma bicicleta</li>
+						<li>Falta de infraestrutura propícia aos ciclistas</li>
+						<li>Falta de Políticas públicas para o uso da bicicleta</li>
+						<li>Desenvolvivento aberto, replicável e adaptável</li>
+					  </ul>
+				  </section>
+				  <section>
+					  <img src="img/investimento.jpg" />
+					  <small>Fonte: Estudo do Coletivo Mobicidade Salvador de 2013 sobre os investimentos do governo do estado da Bahia (Realização: Coletivo mobicidade - 2013)</small>
+				  </section>
+				  <section>
+					  <img src="img/tp_publico.png" />
+					  <small>Fonte: Sistema  de  Informações  da  Mobilidade  Urbana  -  Relatório  Geral  2008 (Realização: Associação  Nacional  de  Transporte  Público, ANTP - 2008)</small>
+				  </section>
+				  <section>
+					  <img src="img/conder.jpeg" />
+					  <small>Fonte: Pesquisa qualitativa e quantitativa sobre perfil socioeconômico com ciclista em Salvador e Lauro de Freitas ( Realização : Conder - 2009) </small>
+				  </section>
+				  <section>
+					<table>
+					<tr style="margin:3px; padding: 3px">
+					  <td><img src="img/proporcaociclistas.png" width="250px" height="175px" /></td>
+					  <td><img src="img/interessebicicleta.png" width="250px" height="175px" /></td>
+					  <td><img src="img/investimentospublicos.png" width="250px" height="175px"/></td>
+					</tr>
+					<tr style="margin:3px; padding: 3px">
+					  <td><img src="img/temperatura.png" width="250px" height="175px" /></td>
+					  <td><img src="img/umidade.png" width="250px" height="175px" /></td>
+					  <td><img src="img/ruido.png" width="250px" height="175px" /></td>
+					</tr>
+					<tr style="margin:3px; padding: 3px">
+					  <td><img src="img/iluminacao.png" width="250px" height="175px" /></td>
+					  <td><img src="img/distancia.png" width="250px" height="175px" /></td>
+					  <td><img src="img/estadopista.png" width="250px" height="175px" /></td>
+					</tr>
+					</table>
+				  </section>
+				</section>
+
+				<section>
+				  <h2>Problema</h2>
+					<p>É possível mensurar se os fatores ambientais e urbanos juntamente com as políticas públicas para a legitimação do uso da bicicleta como modal de transporte são realmente atrativos e suficientes?</p>
+				</section>
+
+				<section>
+				  <h2>Objetivo</h2>
+				  <p>Captura de informações reais e detalhadas relativas ao ambiente das ruas a partir do uso de bicicletas.</p>
+				</section>
+				<section>
+				  <section>
+					<h2>Solução Proposta</h2>
+					  <p>Desenvolvimento de um dispositivo usando prioritariamente tecnologias livres que seja replicável e adaptável para capturar e mensurar os dados urbanos e ambientais de forma geolocalizada.</p>
+				  </section>
+				  <section>
+					<h2>Bduíno</h2>
+					<img src="img/beduino.jpg" alt="imagem beduíno" />
+					<p>Bduíno é uma corruptela dos nomes Bicicleta e Arduíno, além disso também lembra o nome de tribos de nômades do deserto que também relacionam-se com mobilidade.</p>
+					<small>Nome sugerido por Leo Ramos na lista do Raul Hacker Club</small>
+				  </section>
+				  <section>
+					<img src="img/prototipo.jpg" />
+				  </section>
+  				  <section>
+					<img src="img/proto1.jpg" />
+				  </section>
+				  <section>
+					<img src="img/proto2.jpg" />
+				  </section>
+				  <section>
+					<img src="img/proto3.jpg" />
+				  </section>
+				</section>
+
+				<section>
+				  <h2>Conceitos Básicos</h2>
+					<ul>
+					  <li>Aplicações embarcadas</li>
+					  <li>Sensores como meio de coleta de aspectos do contexto urbano</li>
+					  <li>Hardware aberto</li>
+					</ul>
+				</section>
+
+				<section>
+				  <section>
+					<h2>Trabalhos Relacionados</h2>
+				  </section>
+
+				  <section>
+					<h2>Sensorium</h2>
+					<img src="img/sensorium.png" />
+				  </section>
+
+				  <section>
+					<h2>The Copenhagen Wheel</h2>
+					<img src="img/tcw.jpg" />
+				  </section>
+				</section>
+
+				<section>
+				  <section>
+					<h2>Especificação e Validação</h2>
+				  </section>
+				  <section>
+					<h2>Aplicação conjunta, Arduíno e Raspberry Pi</h2>
+					<ul>
+					  <li>Captura de dados</li>
+					  <li>Comunicação serial</li>
+					  <li>Armazenamento de dados</li>
+					</ul>
+				  </section>
+				  <section>
+					<table>
+					  <tr style="margin:3px; padding: 3px">
+						<td><img src="img/sensores/dht11.jpg" width="250px" height="175px" /></td>
+						<td><img src="img/sensores/gps.jpg" width="250px" height="175px" /></td>
+						<td><img src="img/sensores/hcsr04.jpg" width="250px" height="175px"/></td>
+					  </tr>
+					  <tr style="margin:3px; padding: 3px">
+						<td><img src="img/sensores/ldr.jpg" width="250px" height="175px" /></td>
+						<td><img src="img/sensores/acelerometro.jpg" width="250px" height="175px" /></td>
+						<td><img src="img/sensores/som.jpg" width="250px" height="175px"/></td>
+					  </tr>
+					 </table>
+				  </section>
+				  <section>
+					<img src="img/arquitetura.png" />
+				  </section>
+				  <section>
+				  	<h2>Modelo de dados gerado no arduíno</h2>
+					<pre>
+					<code style="word-wrap: break-word;">{
+"light":"light_value",
+"temperature":"temperature_value",
+"humidity":"humidity_value",
+"distance":"distance_value",
+"longitute":"longitute_value",
+"latitude":"latitude_value",
+"sound":"sound_value",
+"shake":"shake_value"
+}
+					</code>
+					</pre>
+				  </section>
+				<section>
+				  <img src="img/db.png" />
+				</section>
+                </section>
+				<section>
+					<h2>Exemplo de coleta de dados</h2>
+				<!--	<pre>
+					  <code style="word-wrap: break-word;">
+SELECT MAX(id) FROM reads;
+49
+SELECT json FROM json WHERE id_reads = 49 LIMIT 5;
+{"light":"light_value","temperature":"temperature_value","humidity":"humidity_value","distance":"distance_value","longitute":"longitute_value","latitude":"latitude_value","sound":"sound_value","shake":"shake_value"}
+{"light":"light_value","temperature":"temperature_value","humidity":"humidity_value","distance":"distance_value","longitute":"longitute_value","latitude":"latitude_value","sound":"sound_value","shake":"shake_value"}
+{"light":"light_value","temperature":"temperature_value","humidity":"humidity_value","distance":"distance_value","longitute":"longitute_value","latitude":"latitude_value","sound":"sound_value","shake":"shake_value"}
+{"light":"light_value","temperature":"temperature_value","humidity":"humidity_value","distance":"distance_value","longitute":"longitute_value","latitude":"latitude_value","sound":"sound_value","shake":"shake_value"}
+{"light":"light_value","temperature":"temperature_value","humidity":"humidity_value","distance":"distance_value","longitute":"longitute_value","latitude":"latitude_value","sound":"sound_value","shake":"shake_value"}
+					  </code>
+					</pre>-->
+				</section>
+
+				<section>
+                                    <section>
+					<h2>Gráfico de quantidade de veículos por distância</h2>
+					<img src="img/graph1.png" />
+                                    </section>
+
+                                    <section>
+                                        <h2>Gráfico de temperatura</h2>
+					<img src="img/temperaturagraph.png" />
+                                    </section>
+				</section>
+			</section>
+				  <section>
+					<h2>Comparativo</h2>
+					<table>
+					  <tr>
+						<th></th>
+						<th>Sensorium</th>
+						<th>T. C. W.</th>
+						<th>Bduíno</th>
+					  </tr>
+					  <tr>
+						<td>Modal</td>
+						<td>A pé</td>
+						<td>Bicicleta</td>
+						<td>Bicicleta</td>
+					  </tr>
+					  <tr>
+						<td>Armazenamento</td>
+						<td>Tablet</td>
+						<td>Celular</td>
+						<td>Bduíno</td>
+					</tr>
+					<tr>
+						<td>Alimentação</td>
+						<td>Indefinido</td>
+						<td>Baterias</td>
+						<td>Bateria c/ carregador solar</td>
+					</tr>
+					<tr>
+						<td>Instalação</td>
+						<td>Não existe</td>
+						<td>Trocar rodas</td>
+						<td>Amarração</td>
+					</tr>
+					<tr>
+						<td>Distribuição</td>
+						<td>Open source?</td>
+						<td>Venda</td>
+						<td>Open source</td>
+					</tr>
+					</table>
+				  </section>
+
+				<section>
+
+				  <section>
+					<h2>Conclusão e Trabalhos Futuros</h2>
+				  </section>
+
+				  <section>
+					<h2>Conclusão</h2>
+					<p>O dispositivo mostrou se capaz de captar dados georeferenciados que mostram aspectos urbanos, como por exemplo a distância entre o veículos motorizados e a bicicleta. Outros aspectos como temperatura e umidade do ar também são coletados e podem influenciar diretamente a relação do uso das pistas pelos ciclistas.</p>
+					<p>Através de um estudo desses dados, estruturados e georeferenciados, é possível indicar quais áreas mais ou menos propícias para o uso da bicicleta.</p>
+				  </section>
+
+				  <section>
+					<h2>Trabalhos futuros</h2>
+					<ul>
+					  <li>Envio de dados no momento da coleta para um servidor</li>
+					  <li>Adicionar o cálculo de velocidade de veículos motorizados</li>
+					  <li>Utilizar também um dînamo para coletar energia mesmo pedalando em ambientes pouco iluminados</li>
+					  <li>Criação de uma plataforma para múltiplas visualizações dos dados</li>
+					</ul>
+				  </section>
+				</section>
+				<section>
+				  <h2>Referências</h2>
+				  <ul>
+					<li><small>K. Brunet, T. Oliveria, Arte, DIY e Comunicação Ambiental: Estudo de caso do projeto Sensorium, do mar para o rio, 2º Encontro Interdisciplinar de Comunicação Ambiental (EICA), 2013.</small></li>
+					<li><small>C. Outram, C. Ratti, A. Biderman, The Copenhagen Wheel: An innovative electric bicycle system that harnesses the power of real-time information and crowd sourcing, COP15 United Nations Climate Change Conference in Copenhagen, 2010.</small></li>
+
+					<li><small>J. Boxall, Arduino workshop A hands-on introduction with 65 projects, No Starch Press, 2013.</small></li>
+					<li><small>S. Monk, Programando o Raspberry Pi, primeiros passos com Python, novatec, 2013.</small></li>
+				  </ul>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
