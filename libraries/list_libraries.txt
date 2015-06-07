@@ -1,5 +1,0 @@
-Libraries necessárias:
-
-DHT11
-HCSR04
-
